@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/user_management
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=faizu123
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: faizu123
+      MYSQL_DATABASE: user_management
+      MYSQL_USER: root
+      MYSQL_PASSWORD: faizu123
+    ports:
+      - "3306:3306"
