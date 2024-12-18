@@ -1,8 +1,7 @@
-
 version: "3"
 services:
   application:
-    image: spring-boot-mysql-app
+    image: expense-management
     ports:
       - "8080:8080"
     networks:
@@ -18,8 +17,8 @@ services:
     ports:
      - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=sbms
+      - MYSQL_ROOT_PASSWORD=faizu123
+      - MYSQL_DATABASE=user_management
     volumes:
       - /data/mysql
 networks:
